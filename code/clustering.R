@@ -13,12 +13,17 @@ head(data)
 
 # Plotting time series #########################################################
 
-png(file="./figures/time_series_DOAVEG_avg.png", width=1920, height=1080)
+save_figure = FALSE
+if(save_figure){
+  png(file="./figures/fig01.png", width=1920, height=1080)
+}
 ggplot(data) + 
   geom_line(aes(x = Date, y = DOAVEG_avg, color = CellID), size = 1) +
   ylab('DOAVEG_avg') +
   theme_bw()
-dev.off()
+if(save_figure){
+  dev.off()
+}
 
 # Clustering ###################################################################
 
