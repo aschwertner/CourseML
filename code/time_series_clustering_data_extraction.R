@@ -1,4 +1,5 @@
 rm(list = ls())
+library(dplyr)
 
 # Load dataset and select data of interest
 Drca = read.csv("./dataraw/rca_data_2012_2022-06-29.csv") %>% 
